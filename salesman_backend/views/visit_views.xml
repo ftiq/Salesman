@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <odoo>
-    <!-- شجرة الزيارات -->
     <record id="view_visit_tree" model="ir.ui.view">
         <field name="name">visit.tree</field>
         <field name="model">salesman.visit.log</field>
@@ -9,12 +8,11 @@
                 <field name="salesman_id" string="المندوب"/>
                 <field name="customer_id" string="العميل"/>
                 <field name="date" string="تاريخ الزيارة"/>
-                <field name="action" string="الإجراء"/>
+                <field name="status" string="الحالة"/>
             </tree>
         </field>
     </record>
 
-    <!-- نموذج الزيارة -->
     <record id="view_visit_form" model="ir.ui.view">
         <field name="name">visit.form</field>
         <field name="model">salesman.visit.log</field>
@@ -25,17 +23,16 @@
                         <field name="salesman_id" string="المندوب"/>
                         <field name="customer_id" string="العميل"/>
                         <field name="date" string="تاريخ الزيارة"/>
-                        <field name="action" string="الإجراء"/>
+                        <field name="status" string="الحالة"/>
                     </group>
                     <group>
-                        <field name="notes" string="ملاحظات"/>
+                        <field name="notes" string="ملاحظات" placeholder="أدخل ملاحظات الزيارة..."/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- إجراء عرض سجل الزيارات -->
     <record id="action_visit_logs" model="ir.actions.act_window">
         <field name="name">سجل الزيارات</field>
         <field name="res_model">salesman.visit.log</field>
