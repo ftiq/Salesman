@@ -5,5 +5,6 @@ class ResPartner(models.Model):
     
     salesman_id = fields.Many2one(
         'salesman.profile',
-        string='المندوب المسؤول'
+        string='المندوب المسؤول',
+        index=True
     )
