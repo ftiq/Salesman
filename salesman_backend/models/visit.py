@@ -1,3 +1,5 @@
+from odoo import models, fields
+
 class VisitLog(models.Model):
     _name = 'salesman.visit.log'
     _description = 'سجل الزيارات'
@@ -5,8 +7,9 @@ class VisitLog(models.Model):
     salesman_id = fields.Many2one('salesman.profile', string='المندوب')
     customer_id = fields.Many2one('res.partner', string='العميل')
     date = fields.Datetime(string='تاريخ الزيارة', default=fields.Datetime.now)
-    action = fields.Selection([
-        ('invoice', 'فاتورة مبيعات'),
-        ('payment', 'سند قبض'),
-        ('failed', 'فشل الزيارة'),
-    ], string='الإجراء')
+    notes = fields.Text(string='ملاحظات')
+    status = fields.Selection([
+        ('planned', 'مخطط'),
+        ('completed', 'مكتمل'),
+        ('cancelled', 'ملغى')
+    ], string='الحالة')
