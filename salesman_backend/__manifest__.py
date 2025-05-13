@@ -9,7 +9,7 @@
     'depends': ['base', 'sale', 'account', 'contacts'],
     'data': [
         'security/ir.model.access.csv',
-        'views/salesman_views.xml',  # يجب أن يكون قبل menu_views.xml
+        'views/salesman_views.xml',
         'views/route_views.xml',
         'views/daily_route_views.xml',
         'views/daily_route_line_views.xml',
@@ -21,11 +21,6 @@
     'demo': [
         'demo/salesman_demo.xml',
     ],
-    'assets': {
-        'web.assets_backend': [
-            'salesman_backend/static/src/css/salesman.css',
-        ],
-    },
     'installable': True,
     'application': True,
     'auto_install': False,
