@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <odoo>
-    <!-- شجرة المسارات -->
     <record id="view_route_tree" model="ir.ui.view">
         <field name="name">route.tree</field>
         <field name="model">salesman.route</field>
@@ -12,7 +11,6 @@
         </field>
     </record>
 
-    <!-- نموذج المسار -->
     <record id="view_route_form" model="ir.ui.view">
         <field name="name">route.form</field>
         <field name="model">salesman.route</field>
@@ -26,7 +24,7 @@
                     <field name="customer_ids" string="العملاء">
                         <tree>
                             <field name="name" string="اسم العميل"/>
-                            <field name="city" string="المدينة"/>
+                            <field name="phone" string="هاتف"/>
                         </tree>
                     </field>
                 </sheet>
@@ -34,7 +32,6 @@
         </field>
     </record>
 
-    <!-- إجراء عرض المسارات -->
     <record id="action_salesman_routes" model="ir.actions.act_window">
         <field name="name">المسارات</field>
         <field name="res_model">salesman.route</field>
