@@ -1,18 +1,22 @@
 {
     'name': 'Salesman Backend',
-    'version': '1.0',
-    'summary': 'Manage salesmen, routes, and visits',
-    'description': 'Custom backend for salesmen linked to mobile app',
-    'category': 'Sales',
-    'author': 'Your Company',
-    'depends': ['base', 'sale', 'account'],  # Dependencies
+    'version': '18.0.1.0',
     'data': [
         'security/ir.model.access.csv',
+        'security/ir_rule.xml',
+        'views/menu_views.xml',
         'views/salesman_views.xml',
-        'views/route_views.xml',
+        'views/route_views.xml', 
+        'views/daily_route_views.xml',
         'views/visit_views.xml',
+        'views/res_partner_views.xml',
+        'views/account_payment_views.xml',
+        'demo/salesman_demo.xml',
     ],
-    'installable': True,
-    'application': True,
-    'license': 'LGPL-3',
+    'assets': {
+        'web.assets_backend': [
+            'salesman_backend/static/src/css/salesman.css',
+        ],
+    },
+    # ... باقي الإعدادات ...
 }
