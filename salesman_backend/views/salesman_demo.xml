@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<odoo>
-    <record id="demo_salesman_1" model="salesman.profile">
-        <field name="name">أحمد محمد</field>
-        <field name="mobile">+966501234567</field>
-    </record>
-</odoo>
