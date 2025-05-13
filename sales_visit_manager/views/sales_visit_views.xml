@@ -1,17 +1,17 @@
 <odoo>
-  <!-- Tree View -->
-  <record id="view_sales_visit_tree" model="ir.ui.view">
-    <field name="name">sales.visit.tree</field>
+  <!-- List View بدلاً من Tree View -->
+  <record id="view_sales_visit_list" model="ir.ui.view">
+    <field name="name">sales.visit.list</field>
     <field name="model">sales.visit</field>
-    <field name="type">tree</field>                      <!-- ← هنا -->
+    <field name="type">list</field>
     <field name="arch" type="xml">
-      <tree string="Sales Visits">
+      <list string="Sales Visits">
         <field name="visit_date"/>
         <field name="visit_type"/>
         <field name="partner_id"/>
         <field name="salesman_id"/>
         <field name="state"/>
-      </tree>
+      </list>
     </field>
   </record>
 
@@ -19,7 +19,7 @@
   <record id="view_sales_visit_form" model="ir.ui.view">
     <field name="name">sales.visit.form</field>
     <field name="model">sales.visit</field>
-    <field name="type">form</field>                       <!-- ← وهنا -->
+    <field name="type">form</field>
     <field name="arch" type="xml">
       <form string="Sales Visit">
         <sheet>
