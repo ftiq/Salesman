@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- شجرة المسارات -->
+    <record id="view_route_tree" model="ir.ui.view">
+        <field name="name">route.tree</field>
+        <field name="model">salesman.route</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="اسم المسار"/>
+                <field name="salesman_id" string="المندوب"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- نموذج المسار -->
+    <record id="view_route_form" model="ir.ui.view">
+        <field name="name">route.form</field>
+        <field name="model">salesman.route</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="اسم المسار"/>
+                        <field name="salesman_id" string="المندوب"/>
+                    </group>
+                    <field name="customer_ids" string="العملاء">
+                        <tree>
+                            <field name="name" string="اسم العميل"/>
+                            <field name="city" string="المدينة"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- إجراء عرض المسارات -->
+    <record id="action_salesman_routes" model="ir.actions.act_window">
+        <field name="name">المسارات</field>
+        <field name="res_model">salesman.route</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
