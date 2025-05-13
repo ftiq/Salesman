@@ -1,1 +1,0 @@
-from . import sales_visit, res_partner, account_move, account_payment
