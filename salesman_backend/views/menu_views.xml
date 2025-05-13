@@ -5,27 +5,27 @@
         id="menu_salesman_profiles" 
         name="بطاقات المناديب" 
         parent="menu_salesman_root" 
-        action="action_salesman_profiles" 
+        action="salesman_backend.action_salesman_profiles"  <!-- التأكد من اسم الوحدة -->
         sequence="20"/>
     
     <menuitem 
         id="menu_salesman_routes" 
         name="المسارات" 
         parent="menu_salesman_root" 
-        action="action_salesman_routes" 
+        action="salesman_backend.action_salesman_routes" 
         sequence="30"/>
     
     <menuitem 
         id="menu_daily_routes" 
         name="خطوط السير اليومية" 
         parent="menu_salesman_root" 
-        action="action_daily_routes" 
+        action="salesman_backend.action_daily_routes" 
         sequence="40"/>
     
     <menuitem 
         id="menu_visit_logs" 
         name="سجل الزيارات" 
         parent="menu_salesman_root" 
-        action="action_visit_logs" 
+        action="salesman_backend.action_visit_logs" 
         sequence="50"/>
 </odoo>
