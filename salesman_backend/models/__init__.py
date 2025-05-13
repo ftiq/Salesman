@@ -1,5 +1,4 @@
-# sales_visit_manager/models/__init__.py
-from . import sales_visit
-from . import res_partner
-from . import account_move
-from . import account_payment
+from . import salesman_profile
+from . import salesman_route
+from . import daily_route
+from . import visit_log
