@@ -1,0 +1,48 @@
+<odoo>
+  <record id="view_sales_visit_tree" model="ir.ui.view">
+    <field name="name">sales.visit.tree</field>
+    <field name="model">sales.visit</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="visit_date"/>
+        <field name="visit_type"/>
+        <field name="partner_id"/>
+        <field name="salesman_id"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_sales_visit_form" model="ir.ui.view">
+    <field name="name">sales.visit.form</field>
+    <field name="model">sales.visit</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="visit_date"/>
+            <field name="visit_type"/>
+            <field name="partner_id"/>
+            <field name="salesman_id"/>
+          </group>
+          <group>
+            <field name="invoice_id"/>
+            <field name="payment_id"/>
+            <field name="order_id"/>
+            <field name="delivery_done"/>
+          </group>
+          <notebook>
+            <page string="Cancellation">
+              <field name="state"/>
+              <field name="cancel_reason"/>
+            </page>
+          </notebook>
+        </sheet>
+        <footer>
+          <button string="Mark Done" type="object" name="action_done" states="draft"/>
+          <button string="Cancel Visit" type="object" name="action_cancel" states="draft"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>
