@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- القوائم الرئيسية -->
+    <menuitem id="menu_salesman_root" name="إدارة المناديب" sequence="10"/>
+    
+    <!-- قائمة بطاقات المناديب -->
+    <menuitem 
+        id="menu_salesman_profiles" 
+        name="بطاقات المناديب" 
+        parent="menu_salesman_root" 
+        action="action_salesman_profiles" 
+        sequence="20"/>
+    
+    <!-- قائمة المسارات -->
+    <menuitem 
+        id="menu_salesman_routes" 
+        name="المسارات" 
+        parent="menu_salesman_root" 
+        action="action_salesman_routes" 
+        sequence="30"/>
+    
+    <!-- قائمة خطوط السير اليومية -->
+    <menuitem 
+        id="menu_daily_routes" 
+        name="خطوط السير اليومية" 
+        parent="menu_salesman_root" 
+        action="action_daily_routes" 
+        sequence="40"/>
+    
+    <!-- قائمة سجل الزيارات -->
+    <menuitem 
+        id="menu_visit_logs" 
+        name="سجل الزيارات" 
+        parent="menu_salesman_root" 
+        action="action_visit_logs" 
+        sequence="50"/>
+</odoo>
