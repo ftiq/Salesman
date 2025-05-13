@@ -1,5 +1,5 @@
 <odoo>
-  <!-- List View بدلاً من Tree View -->
+  <!-- List View -->
   <record id="view_sales_visit_list" model="ir.ui.view">
     <field name="name">sales.visit.list</field>
     <field name="model">sales.visit</field>
@@ -43,8 +43,14 @@
           </notebook>
         </sheet>
         <footer>
-          <button name="action_done" type="object" string="Mark Done" states="draft"/>
-          <button name="action_cancel" type="object" string="Cancel Visit" states="draft"/>
+          <button name="action_done"
+                  type="object"
+                  string="Mark Done"
+                  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+          <button name="action_cancel"
+                  type="object"
+                  string="Cancel Visit"
+                  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
         </footer>
       </form>
     </field>
