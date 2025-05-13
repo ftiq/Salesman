@@ -1,9 +1,10 @@
 <odoo>
+    <!-- عرض الشجرة -->
     <record id="view_salesman_tree" model="ir.ui.view">
         <field name="name">salesman.tree</field>
         <field name="model">salesman.profile</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree string="قائمة المناديب">
                 <field name="name" string="اسم المندوب"/>
                 <field name="mobile" string="موبايل"/>
                 <field name="branch" string="الفرع"/>
@@ -11,11 +12,12 @@
         </field>
     </record>
 
+    <!-- عرض النموذج -->
     <record id="view_salesman_form" model="ir.ui.view">
         <field name="name">salesman.form</field>
         <field name="model">salesman.profile</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="بيانات المندوب">
                 <sheet>
                     <group>
                         <field name="name" string="اسم المندوب"/>
@@ -25,7 +27,12 @@
                     
                     <notebook>
                         <page string="العملاء">
-                            <field name="customer_ids"/>
+                            <field name="customer_ids">
+                                <tree>
+                                    <field name="name" string="اسم العميل"/>
+                                    <field name="phone" string="هاتف"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="المسارات">
                             <field name="route_ids"/>
@@ -36,10 +43,15 @@
         </field>
     </record>
 
-    <!-- هذا السجل هو الأهم ويجب أن يكون موجودا -->
+    <!-- تعريف الإجراء -->
     <record id="action_salesman_profiles" model="ir.actions.act_window">
         <field name="name">المناديب</field>
         <field name="res_model">salesman.profile</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                اضغط لإنشاء مندوب جديد
+            </p>
+        </field>
     </record>
 </odoo>
