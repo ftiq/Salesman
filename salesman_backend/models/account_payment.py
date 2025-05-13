@@ -5,5 +5,6 @@ class AccountPayment(models.Model):
     
     salesman_id = fields.Many2one(
         'salesman.profile',
-        string='المندوب'
+        string='المندوب',
+        ondelete='set null'
     )
