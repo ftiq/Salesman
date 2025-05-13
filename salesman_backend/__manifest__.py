@@ -13,6 +13,7 @@
     'views/salesman_views.xml',
     'views/route_views.xml',
     'views/daily_route_views.xml',
+    'views/daily_route_line_views.xml',  # أضف هذا السطر
     'views/visit_views.xml',
     'views/res_partner_views.xml',
     'views/account_payment_views.xml',
