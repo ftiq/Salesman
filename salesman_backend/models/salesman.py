@@ -9,7 +9,11 @@ class SalesmanProfile(models.Model):
     branch = fields.Many2one('res.branch', string='الفرع')
     active = fields.Boolean(default=True)
     
-    # Relations
-    customer_ids = fields.One2many('res.partner', 'salesman_id', string='العملاء')
+    # تعديل العلاقة لاستخدام نفس اسم الحقل
+    customer_ids = fields.One2many(
+        'res.partner',
+        'salesman_id',  # يجب أن يتطابق مع اسم الحقل في res.partner
+        string='العملاء'
+    )
     payment_ids = fields.One2many('account.payment', 'salesman_id', string='قسائم الدفع')
     route_ids = fields.One2many('salesman.route', 'salesman_id', string='المسارات')
