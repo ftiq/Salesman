@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_salesman_tree" model="ir.ui.view">
+        <field name="name">salesman.tree</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="اسم المندوب"/>
+                <field name="mobile" string="موبايل"/>
+                <field name="branch" string="الفرع"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_salesman_form" model="ir.ui.view">
+        <field name="name">salesman.form</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="اسم المندوب"/>
+                        <field name="mobile" string="موبايل"/>
+                        <field name="branch" string="الفرع"/>
+                    </group>
+                    
+                    <notebook>
+                        <page string="العملاء">
+                            <field name="customer_ids"/>
+                        </page>
+                        <page string="المسارات">
+                            <field name="route_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_salesman_profiles" model="ir.actions.act_window">
+        <field name="name">المناديب</field>
+        <field name="res_model">salesman.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
