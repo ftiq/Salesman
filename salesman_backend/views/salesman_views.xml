@@ -1,8 +1,9 @@
 <odoo>
-    <!-- عرض الشجرة المبسط -->
+    <!-- عرض الشجرة المعدل -->
     <record id="view_salesman_tree" model="ir.ui.view">
         <field name="name">salesman.tree</field>
         <field name="model">salesman.profile</field>
+        <field name="type">tree</field>  <!-- هذه السطر الحاسم -->
         <field name="arch" type="xml">
             <tree>
                 <field name="name" string="اسم المندوب"/>
@@ -10,10 +11,11 @@
         </field>
     </record>
 
-    <!-- عرض النموذج المبسط -->
+    <!-- عرض النموذج المعدل -->
     <record id="view_salesman_form" model="ir.ui.view">
         <field name="name">salesman.form</field>
         <field name="model">salesman.profile</field>
+        <field name="type">form</field>  <!-- هذه السطر الحاسم -->
         <field name="arch" type="xml">
             <form>
                 <sheet>
