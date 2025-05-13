@@ -26,4 +26,8 @@
             'salesman_backend/static/src/css/salesman.css',
         ],
     },
-    'installable': True
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
