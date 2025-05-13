@@ -4,13 +4,14 @@ class SalesmanProfile(models.Model):
     _name = 'salesman.profile'
     _description = 'بطاقة المندوب'
 
+    # الحقول الأساسية
     name = fields.Char(string='اسم المندوب', required=True)
     mobile = fields.Char(string='موبايل')
-    
-    # ✅ المستودع بدلًا من الفرع
+
+    # المستودع
     warehouse_id = fields.Many2one('stock.warehouse', string='المستودع')
 
-    # Many2many مع العملاء
+    # العملاء المرتبطين
     customer_ids = fields.Many2many(
         'res.partner',
         string='العملاء',
@@ -19,5 +20,39 @@ class SalesmanProfile(models.Model):
         column2='partner_id'
     )
 
-    # One2many مع المدفوعات
+    # قسائم الدفع المرتبطة
     payment_ids = fields.One2many('account.payment', 'salesman_id', string='قسائم الدفع')
+
+    # 🔐 صلاحيات متفرقة - جميعها Boolean
+    allow_add_new_customer = fields.Boolean(string='السماح بإضافة زبائن جديدة')
+    return_needs_approval = fields.Boolean(string='الإرتجاع الجديد يتطلب موافقة الإدارة')
+    photo_required_for_new_customer = fields.Boolean(string='صورة الزبون الجديد مطلوبة')
+    allow_update_customer_data = fields.Boolean(string='السماح بتحديث معلومات الزبون')
+    allow_zone_update = fields.Boolean(string='السماح بتحديث موقع الزبون')
+    enforce_route_commitment = fields.Boolean(string='الإلتزام بالمسار فقط لزيارات المندوب')
+    allow_off_route_visits = fields.Boolean(string='السماح بزيارات خارج المسار')
+    force_visit_location = fields.Boolean(string='الموقع إجباري')
+    enforce_visit_closure_location = fields.Boolean(string='الالتزام بالموقع عند إغلاق الزيارة')
+    visit_notes_required = fields.Boolean(string='ملاحظات الزيارة مطلوبة عند إلغاء الزيارة')
+    enforce_visit_time = fields.Boolean(string='تفعيل الحد الزمني لأوقات الزيارة')
+    restrict_clients_to_route = fields.Boolean(string='تفعيل عملاء المسار فقط ضمن المسار')
+    check_exit_from_route = fields.Boolean(string='التحقق من المسار عند عملية الخروج')
+    check_exit_time = fields.Boolean(string='مراقبة بصمة الخروج عند الخروج')
+
+    # إعدادات فواتير/أسعار/خصومات
+    verify_debt_ceiling = fields.Boolean(string='التحقق من سقف الدين للزبون')
+    verify_credit_days = fields.Boolean(string='التحقق من عدد الذمة للزبون')
+    allow_return_invoice = fields.Boolean(string='الفواتير الإحالة ممنوعة للزبون')
+    return_invoice_limit = fields.Boolean(string='التحقق من عدد فواتير الإحالة المستحقة')
+    debt_ceiling_per_salesman = fields.Boolean(string='التحقق من سقف الدين للمندوب')
+    allow_misc_discounts = fields.Boolean(string='السماح بخصم المشروبات')
+    allow_discount_by_percentage = fields.Boolean(string='السماح بتعديل نسبة خصم')
+    apply_discount_on_receipt = fields.Boolean(string='نمط السند')
+    allow_discount_on_items = fields.Boolean(string='السماح بتعديل نسبة خصم المواد')
+    allow_edit_prices = fields.Boolean(string='السماح بتعديل الأسعار')
+    allow_edit_invoice = fields.Boolean(string='السماح بتعديل الفاتورة')
+    bind_prices_to_category = fields.Boolean(string='ربط الأسعار مع تصنيفات تلقائيًا')
+    show_materials_without_stock = fields.Boolean(string='إظهار المواد التي بلا رصيد')
+    hide_stock_in_invoice = fields.Boolean(string='عدم إظهار رصيد المواد في الفواتير')
+    allow_liquid_sales = fields.Boolean(string='السماح بعمليات المواد السائلة')
+    allow_invoice_sales = fields.Boolean(string='السماح بالمبيعات السائلة')
