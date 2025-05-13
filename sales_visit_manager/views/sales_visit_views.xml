@@ -46,13 +46,13 @@
           <button name="action_done"
                   type="object"
                   string="Mark Done"
-                  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                  modifiers='{"invisible": [["state", "!=", "draft"]]}'/>
           <button name="action_cancel"
                   type="object"
                   string="Cancel Visit"
-                  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                  modifiers='{"invisible": [["state", "!=", "draft"]]}'/>
         </footer>
       </form>
     </field>
   </record>
-</odoo>
+</odoo
