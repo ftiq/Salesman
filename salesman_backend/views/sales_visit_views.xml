@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_salesman_tree" model="ir.ui.view">
+        <field name="name">salesman.tree</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="mobile"/>
+                <field name="branch"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_salesman_form" model="ir.ui.view">
+        <field name="name">salesman.form</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="mobile"/>
+                        <field name="branch"/>
+                    </group>
+                    <notebook>
+                        <page string="الصلاحيات">
+                            <group>
+                                <field name="allow_discount"/>
+                                <field name="allow_price_edit"/>
+                                <field name="max_visits"/>
+                            </group>
+                        </page>
+                        <page string="العملاء">
+                            <field name="customer_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_salesman_root" name="إدارة المناديب"/>
+    <menuitem id="menu_salesman" name="المناديب" parent="menu_salesman_root" action="action_salesman_list"/>
+
+    <record id="action_salesman_list" model="ir.actions.act_window">
+        <field name="name">المناديب</field>
+        <field name="res_model">salesman.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
