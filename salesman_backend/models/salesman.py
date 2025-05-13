@@ -6,15 +6,18 @@ class SalesmanProfile(models.Model):
 
     name = fields.Char(string='اسم المندوب', required=True)
     mobile = fields.Char(string='موبايل')
-    branch = fields.Many2one('res.branch', string='الفرع')
     
-    # تغيير العلاقة إلى Many2many كحل بديل
+    # ✅ المستودع بدلًا من الفرع
+    warehouse_id = fields.Many2one('stock.warehouse', string='المستودع')
+
+    # Many2many مع العملاء
     customer_ids = fields.Many2many(
         'res.partner',
         string='العملاء',
-        relation='salesman_partner_rel',  # اسم جدول الربط
+        relation='salesman_partner_rel',
         column1='salesman_id',
         column2='partner_id'
     )
-    
+
+    # One2many مع المدفوعات
     payment_ids = fields.One2many('account.payment', 'salesman_id', string='قسائم الدفع')
