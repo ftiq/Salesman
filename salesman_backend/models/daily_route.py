@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, models, fields  # أضيف api هنا
 
 class DailyRoute(models.Model):
     _name = 'salesman.daily.route'
