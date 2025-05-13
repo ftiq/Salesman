@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_daily_route_tree" model="ir.ui.view">
+        <field name="name">daily.route.tree</field>
+        <field name="model">salesman.daily.route</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="الاسم"/>
+                <field name="date" string="التاريخ"/>
+                <field name="salesman_id" string="المندوب"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_daily_route_form" model="ir.ui.view">
+        <field name="name">daily.route.form</field>
+        <field name="model">salesman.daily.route</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date" string="التاريخ"/>
+                        <field name="salesman_id" string="المندوب"/>
+                    </group>
+                    <field name="route_line_ids" string="تفاصيل خط السير">
+                        <tree>
+                            <field name="customer_id" string="العميل"/>
+                            <field name="sequence" string="الترتيب"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_daily_routes" model="ir.actions.act_window">
+        <field name="name">خطوط السير اليومية</field>
+        <field name="res_model">salesman.daily.route</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
