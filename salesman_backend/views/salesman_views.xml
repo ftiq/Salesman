@@ -36,6 +36,7 @@
         </field>
     </record>
 
+    <!-- هذا السجل هو الأهم ويجب أن يكون موجودا -->
     <record id="action_salesman_profiles" model="ir.actions.act_window">
         <field name="name">المناديب</field>
         <field name="res_model">salesman.profile</field>
