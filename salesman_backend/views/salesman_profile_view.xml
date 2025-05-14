@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-
-    <!-- ✅ نموذج بطاقة المندوب -->
-    <record id="view_salesman_profile_form" model="ir.ui.view">
-        <field name="name">salesman.profile.form</field>
-        <field name="model">salesman.profile</field>
-        <field name="arch" type="xml">
-            <form string="بطاقة المندوب">
+<form string="بطاقة المندوب">
                 <sheet>
                     <notebook>
 
@@ -99,7 +91,3 @@
                     </notebook>
                 </sheet>
             </form>
-        </field>
-    </record>
-
-</odoo>
