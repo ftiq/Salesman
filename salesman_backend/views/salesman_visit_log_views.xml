@@ -30,11 +30,4 @@
         </field>
     </record>
 
-    <record id="action_salesman_visit_log" model="ir.actions.act_window">
-        <field name="name">سجل الزيارات</field>
-        <field name="res_model">salesman.visit.log</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="menu_salesman_visit_log" name="سجل الزيارات" parent="menu_salesman_root" action="action_salesman_visit_log"/>
 </odoo>
