@@ -83,6 +83,7 @@ class SalesmanProfile(models.Model):
     daily_block_daily_visits = fields.Boolean(string="منع استعراض الزيارات اليومية")
     daily_block_pending_visits = fields.Boolean(string="منع استعراض الزيارات المتأخرة")
     daily_block_skipped_visits = fields.Boolean(string="منع استعراض الزيارات المتخطية")
+    sale_order_ids = fields.One2many('sale.order', 'salesman_id', string="طلبات البيع")
     daily_block_promotional_sales = fields.Boolean(string="منع استعراض المبيعات الترويجية")
     daily_block_total_sales = fields.Boolean(string="منع استعراض المبيعات")
     
