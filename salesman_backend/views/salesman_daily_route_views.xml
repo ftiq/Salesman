@@ -33,13 +33,5 @@
         </field>
     </record>
 
-    <record id="action_salesman_daily_route" model="ir.actions.act_window">
-        <field name="name">خط السير اليومي</field>
-        <field name="res_model">salesman.daily.route</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="menu_salesman_root" name="المندوبون"/>
-    <menuitem id="menu_salesman_daily_route" name="خط السير اليومي" parent="menu_salesman_root" action="action_salesman_daily_route"/>
 </odoo>
 ``
