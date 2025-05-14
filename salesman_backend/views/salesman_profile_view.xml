@@ -14,8 +14,6 @@
                                 <field name="name"/>
                                 <field name="mobile"/>
                                 <field name="warehouse_id"/>
-                                <field name="customer_ids"/>
-                                <field name="payment_ids"/>
                             </group>
                         </page>
 
