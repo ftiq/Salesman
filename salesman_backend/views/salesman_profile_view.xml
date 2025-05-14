@@ -22,7 +22,6 @@
                         <!-- ✅ الصلاحيات -->
                         <page string="الصلاحيات">
                             <group string="إعدادات عامة" col="3">
-                                <!-- العمود الأول -->
                                 <group>
                                     <field name="allow_add_new_customer"/>
                                     <field name="allow_update_customer_data"/>
@@ -31,8 +30,6 @@
                                     <field name="check_exit_time"/>
                                     <field name="enforce_visit_closure_location"/>
                                 </group>
-
-                                <!-- العمود الثاني -->
                                 <group>
                                     <field name="photo_required_for_new_customer"/>
                                     <field name="allow_off_route_visits"/>
@@ -41,8 +38,6 @@
                                     <field name="enforce_visit_time"/>
                                     <field name="force_visit_location"/>
                                 </group>
-
-                                <!-- العمود الثالث -->
                                 <group>
                                     <field name="enforce_route_commitment"/>
                                     <field name="verify_debt_ceiling"/>
@@ -56,18 +51,23 @@
 
                         <!-- ✅ صلاحيات التقارير -->
                         <page string="صلاحيات التقارير">
-                            <group>
-                                <field name="block_cash_box"/>
-                                <field name="block_return_bills"/>
-                                <field name="block_sales_receipts"/>
-                                <field name="block_customer_bills"/>
-                                <field name="block_visit_reports"/>
-                                <field name="block_offer_report"/>
-                                <field name="block_account_statement"/>
-                                <field name="block_balance_sheet"/>
-                                <field name="report_allowed_period_1"/>
-                                <field name="report_allowed_period_2"/>
-                                <field name="report_allowed_period_3"/>
+                            <group col="2">
+                                <group>
+                                    <field name="report_allow_statement"/>
+                                    <field name="report_allow_aging"/>
+                                    <field name="report_allow_invoices"/>
+                                    <field name="report_allow_visits"/>
+                                </group>
+                                <group>
+                                    <field name="report_allow_offers"/>
+                                    <field name="report_allow_account"/>
+                                    <field name="report_allow_debts"/>
+                                </group>
+                            </group>
+                            <group col="3">
+                                <field name="duration_1"/>
+                                <field name="duration_2"/>
+                                <field name="duration_3"/>
                             </group>
                         </page>
 
