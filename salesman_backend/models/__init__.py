@@ -5,3 +5,4 @@ from . import daily_route_line  # أضف هذا السطر
 from . import visit
 from . import res_partner
 from . import account_payment
+from . import sale_order  # أضف هذا
