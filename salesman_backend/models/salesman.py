@@ -56,3 +56,17 @@ class SalesmanProfile(models.Model):
     hide_stock_in_invoice = fields.Boolean(string='عدم إظهار رصيد المواد في الفواتير')
     allow_liquid_sales = fields.Boolean(string='السماح بعمليات المواد السائلة')
     allow_invoice_sales = fields.Boolean(string='السماح بالمبيعات السائلة')
+
+    # Report Permissions
+    report_allow_statement = fields.Boolean(string="منع استعراض كشف صندوق المندوب")
+    report_allow_aging = fields.Boolean(string="منع استعراض أعمار الذمم")
+    report_allow_invoices = fields.Boolean(string="منع استعراض فواتير المندوب")
+    report_allow_visits = fields.Boolean(string="منع استعراض زيارات المندوب")
+    report_allow_offers = fields.Boolean(string="منع استعراض تقرير العروض")
+    report_allow_account = fields.Boolean(string="منع استعراض كشف الحساب")
+    report_allow_debts = fields.Boolean(string="منع استعراض مديونية المندوب")
+    
+    # Duration fields
+    duration_1 = fields.Char(string="المدة المسموحة ١")
+    duration_2 = fields.Char(string="المدة المسموحة ٢")
+    duration_3 = fields.Char(string="المدة المسموحة ٣")
