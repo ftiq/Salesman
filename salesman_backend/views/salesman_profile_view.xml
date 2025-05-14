@@ -1,4 +1,9 @@
-<form string="بطاقة المندوب">
+<odoo>
+    <record id="view_salesman_profile_form" model="ir.ui.view">
+        <field name="name">salesman.profile.form</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <form string="بطاقة المندوب">
                 <sheet>
                     <notebook>
 
@@ -8,6 +13,28 @@
                                 <field name="name"/>
                                 <field name="mobile"/>
                                 <field name="warehouse_id"/>
+                            </group>
+
+                            <!-- ✅ العملاء (Many2many) -->
+                            <group string="العملاء">
+                                <field name="customer_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="phone"/>
+                                        <field name="email"/>
+                                    </tree>
+                                </field>
+                            </group>
+
+                            <!-- ✅ قسائم الدفع (One2many) -->
+                            <group string="قسائم الدفع">
+                                <field name="payment_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="payment_date"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
                             </group>
                         </page>
 
@@ -91,3 +118,6 @@
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+</odoo>
