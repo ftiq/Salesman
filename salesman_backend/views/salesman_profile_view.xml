@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <!-- ✅ نموذج بطاقة المندوب -->
     <record id="view_salesman_profile_form" model="ir.ui.view">
         <field name="name">salesman.profile.form</field>
         <field name="model">salesman.profile</field>
@@ -99,4 +101,32 @@
             </form>
         </field>
     </record>
+
+    <!-- ✅ عرض القائمة (Tree View) -->
+    <record id="view_salesman_profile_tree" model="ir.ui.view">
+        <field name="name">salesman.profile.tree</field>
+        <field name="model">salesman.profile</field>
+        <field name="arch" type="xml">
+            <tree string="بطاقة المندوب">
+                <field name="name"/>
+                <field name="mobile"/>
+                <field name="warehouse_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ✅ Action لفتح النموذج -->
+    <record id="action_salesman_profile" model="ir.actions.act_window">
+        <field name="name">بطاقة المندوب</field>
+        <field name="res_model">salesman.profile</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>إدارة معلومات المندوب وصلاحياته ومساراته.</p>
+        </field>
+    </record>
+
+    <!-- ✅ عنصر القائمة -->
+    <menuitem id="menu_salesman_root" name="برنامج المناديب" sequence="10"/>
+    <menuitem id="menu_salesman_profile" name="بطاقة المندوب" parent="menu_salesman_root" action="action_salesman_profile" sequence="1"/>
+
 </odoo>
