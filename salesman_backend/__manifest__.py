@@ -22,5 +22,6 @@
         'views/account_move_views.xml',
         'views/stock_picking_views.xml',
         'views/stock_warehouse_views.xml',
+        'security/ir.model.access.csv',
     ],
 }
