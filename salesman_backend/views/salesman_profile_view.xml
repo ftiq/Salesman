@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <!-- ✅ نموذج بطاقة المندوب -->
+    <!-- ✅ View النموذج (Form View) -->
     <record id="view_salesman_profile_form" model="ir.ui.view">
         <field name="name">salesman.profile.form</field>
         <field name="model">salesman.profile</field>
-        <field name="type">form</field> <!-- أضفنا هذا -->
+        <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="بطاقة المندوب">
                 <sheet>
@@ -103,11 +103,11 @@
         </field>
     </record>
 
-    <!-- ✅ عرض القائمة (Tree View) -->
+    <!-- ✅ View القائمة (Tree View) -->
     <record id="view_salesman_profile_tree" model="ir.ui.view">
         <field name="name">salesman.profile.tree</field>
         <field name="model">salesman.profile</field>
-        <field name="type">tree</field> <!-- ✅ هذا هو السطر الذي كان ناقص -->
+        <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="بطاقة المندوب">
                 <field name="name"/>
@@ -117,7 +117,7 @@
         </field>
     </record>
 
-    <!-- ✅ Action لفتح النموذج -->
+    <!-- ✅ Action -->
     <record id="action_salesman_profile" model="ir.actions.act_window">
         <field name="name">بطاقة المندوب</field>
         <field name="res_model">salesman.profile</field>
@@ -127,8 +127,11 @@
         </field>
     </record>
 
-    <!-- ✅ عنصر القائمة -->
+    <!-- ✅ قائمة -->
     <menuitem id="menu_salesman_root" name="برنامج المناديب" sequence="10"/>
-    <menuitem id="menu_salesman_profile" name="بطاقة المندوب" parent="menu_salesman_root" action="action_salesman_profile" sequence="1"/>
-
+    <menuitem id="menu_salesman_profile"
+              name="بطاقة المندوب"
+              parent="menu_salesman_root"
+              action="action_salesman_profile"
+              sequence="1"/>
 </odoo>
