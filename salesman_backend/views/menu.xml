@@ -1,0 +1,34 @@
+<odoo>
+    <!-- القائمة الرئيسية للبرنامج -->
+    <menuitem id="menu_salesman_root" name="برنامج المندوبين" sequence="10"/>
+
+    <!-- بطاقة المندوب -->
+    <menuitem id="menu_salesman_profile"
+              name="بطاقة المندوب"
+              parent="menu_salesman_root"
+              action="action_salesman_profile"/>
+
+    <!-- مسار المندوب -->
+    <menuitem id="menu_salesman_route"
+              name="مسار المندوب"
+              parent="menu_salesman_root"
+              action="action_salesman_route"/>
+
+    <!-- خط السير اليومي -->
+    <menuitem id="menu_salesman_daily_route"
+              name="خط السير اليومي"
+              parent="menu_salesman_root"
+              action="action_salesman_daily_route"/>
+
+    <!-- تفاصيل خط السير اليومي (من داخل نفس النموذج عادة) -->
+    <menuitem id="menu_salesman_daily_route_line"
+              name="تفاصيل خط السير اليومي"
+              parent="menu_salesman_root"
+              action="action_salesman_daily_route_line"/>
+
+    <!-- سجل الزيارات -->
+    <menuitem id="menu_salesman_visit_log"
+              name="سجل الزيارات"
+              parent="menu_salesman_root"
+              action="action_salesman_visit_log"/>
+</odoo>
