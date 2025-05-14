@@ -26,11 +26,4 @@
         </field>
     </record>
 
-    <record id="action_salesman_route" model="ir.actions.act_window">
-        <field name="name">مسارات المندوبين</field>
-        <field name="res_model">salesman.route</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="menu_salesman_route" name="المسارات" parent="menu_salesman_root" action="action_salesman_route"/>
 </odoo>
