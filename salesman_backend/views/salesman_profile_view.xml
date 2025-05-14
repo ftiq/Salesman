@@ -5,6 +5,7 @@
     <record id="view_salesman_profile_form" model="ir.ui.view">
         <field name="name">salesman.profile.form</field>
         <field name="model">salesman.profile</field>
+        <field name="type">form</field> <!-- أضفنا هذا -->
         <field name="arch" type="xml">
             <form string="بطاقة المندوب">
                 <sheet>
@@ -106,6 +107,7 @@
     <record id="view_salesman_profile_tree" model="ir.ui.view">
         <field name="name">salesman.profile.tree</field>
         <field name="model">salesman.profile</field>
+        <field name="type">tree</field> <!-- ✅ هذا هو السطر الذي كان ناقص -->
         <field name="arch" type="xml">
             <tree string="بطاقة المندوب">
                 <field name="name"/>
