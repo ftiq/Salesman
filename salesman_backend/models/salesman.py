@@ -70,3 +70,21 @@ class SalesmanProfile(models.Model):
     duration_1 = fields.Char(string="المدة المسموحة ١")
     duration_2 = fields.Char(string="المدة المسموحة ٢")
     duration_3 = fields.Char(string="المدة المسموحة ٣")
+    # Daily Page Fields Permissions
+    daily_block_sales_total = fields.Boolean(string="منع استعراض اجمالي المبيعات")
+    daily_block_orders_total = fields.Boolean(string="منع استعراض اجمالي الطلبات")
+    daily_block_returns_total = fields.Boolean(string="منع استعراض اجمالي المرتجع")
+    daily_block_requests_total = fields.Boolean(string="منع استعراض اجمالي طلبات المرتجع")
+    daily_block_previous_balance = fields.Boolean(string="منع استعراض الرصيد السابق")
+    daily_block_expenses = fields.Boolean(string="منع استعراض المشروبات")
+    daily_block_payments = fields.Boolean(string="منع استعراض المدفوعات")
+    
+    daily_block_current_balance = fields.Boolean(string="منع استعراض الرصيد الحالي")
+    daily_block_daily_visits = fields.Boolean(string="منع استعراض الزيارات اليومية")
+    daily_block_pending_visits = fields.Boolean(string="منع استعراض الزيارات المتأخرة")
+    daily_block_skipped_visits = fields.Boolean(string="منع استعراض الزيارات المتخطية")
+    daily_block_promotional_sales = fields.Boolean(string="منع استعراض المبيعات الترويجية")
+    daily_block_total_sales = fields.Boolean(string="منع استعراض المبيعات")
+    
+    daily_block_return_invoices = fields.Boolean(string="منع استعراض الفواتير الاحالة المستحقة")
+    daily_block_approved_return_invoices = fields.Boolean(string="منع استعراض الفواتير الاحالة المسموحة")
