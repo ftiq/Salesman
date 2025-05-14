@@ -15,16 +15,7 @@
         # 🛡️ ملفات الصلاحيات أولاً
         'security/ir.model.access.csv',
 
-        # 📄 Views التي تحتوي على actions
-        'views/salesman_profile_view.xml',
-        'views/salesman_route_views.xml',
-        'views/salesman_daily_route_views.xml',
-        'views/salesman_visit_log_views.xml',
-        'views/sale_order_views.xml',
-        'views/account_payment_views.xml',
-        'views/account_move_views.xml',
-        'views/stock_picking_views.xml',
-        'views/stock_warehouse_views.xml',
+    
 
     ],
 }
