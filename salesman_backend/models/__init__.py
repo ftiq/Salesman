@@ -6,3 +6,6 @@ from . import visit
 from . import res_partner
 from . import account_payment
 from . import sale_order  # أضف هذا
+from . import stock_picking
+from . import account_move
+
