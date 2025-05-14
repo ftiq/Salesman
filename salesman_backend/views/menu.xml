@@ -1,34 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- القائمة الرئيسية للبرنامج -->
-    <menuitem id="menu_salesman_root" name="برنامج المندوبين" sequence="10"/>
+    <!-- القائمة الجذرية للبرنامج -->
+    <menuitem id="menu_salesman_root" name="برنامج المناديب" sequence="10"/>
 
-    <!-- بطاقة المندوب -->
+    <!-- ✅ بطاقة المندوب -->
     <menuitem id="menu_salesman_profile"
               name="بطاقة المندوب"
               parent="menu_salesman_root"
-              action="action_salesman_profile"/>
+              action="action_salesman_profile"
+              sequence="1"/>
 
-    <!-- مسار المندوب -->
+    <!-- ✅ مسار المندوب -->
     <menuitem id="menu_salesman_route"
               name="مسار المندوب"
               parent="menu_salesman_root"
-              action="action_salesman_route"/>
+              action="action_salesman_route"
+              sequence="2"/>
 
-    <!-- خط السير اليومي -->
+    <!-- ✅ خط السير اليومي -->
     <menuitem id="menu_salesman_daily_route"
               name="خط السير اليومي"
               parent="menu_salesman_root"
-              action="action_salesman_daily_route"/>
+              action="action_salesman_daily_route"
+              sequence="3"/>
 
-    <!-- تفاصيل خط السير اليومي (من داخل نفس النموذج عادة) -->
+    <!-- ✅ تفاصيل خط السير اليومي (غالباً لا يحتاج إلى قائمة مستقلة إلا إن كان مطلوب بشكل مباشر) -->
     <menuitem id="menu_salesman_daily_route_line"
               name="تفاصيل خط السير اليومي"
               parent="menu_salesman_root"
-              action="action_salesman_daily_route_line"/>
+              action="action_salesman_daily_route_line"
+              sequence="4"/>
 
-    <!-- سجل الزيارات -->
+    <!-- ✅ سجل الزيارات -->
     <menuitem id="menu_salesman_visit_log"
               name="سجل الزيارات"
               parent="menu_salesman_root"
-              action="action_salesman_visit_log"/>
+              action="action_salesman_visit_log"
+              sequence="5"/>
 </odoo>
