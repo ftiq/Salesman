@@ -26,7 +26,5 @@
         'views/stock_picking_views.xml',
         'views/stock_warehouse_views.xml',
 
-        # 🧭 القوائم دائماً في النهاية
-        'views/menu.xml',
     ],
 }
