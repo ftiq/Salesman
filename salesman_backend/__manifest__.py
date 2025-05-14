@@ -10,5 +10,9 @@
     'installable': True,
     'application': True,
     'auto_install': False,
+    'data': [
+        'views/salesman_profile_view.xml',
+        # أضف المزيد من ملفات الـ XML هنا إن وجدت
+    ],
     'license': 'LGPL-3',
 }
