@@ -1,27 +1,23 @@
-# models/salesman_daily_route_line.py
 from odoo import models, fields
 
-class SalesmanDailyRouteLine(models.Model):
+class DailyRouteLine(models.Model):
     _name = 'salesman.daily.route.line'
     _description = 'تفاصيل خط السير اليومي'
-    _order = 'sequence, day'
 
     daily_route_id = fields.Many2one(
-        'salesman.daily.route', string='خط السير', required=True, ondelete='cascade')
+        'salesman.daily.route',
+        string='خط السير',
+        required=True,
+        ondelete='cascade'
+    )
+    customer_id = fields.Many2one(
+        'res.partner',
+        string='العميل',
+        required=True
+    )
     sequence = fields.Integer(string='الترتيب')
-    day = fields.Selection([
-        ('mon','الإثنين'),
-        ('tue','الثلاثاء'),
-        ('wed','الأربعاء'),
-        ('thu','الخميس'),
-        ('fri','الجمعة'),
-        ('sat','السبت'),
-        ('sun','الأحد'),
-    ], string='اليوم', required=True)
+    visited = fields.Boolean(string='تمت الزيارة', default=False)"
 
-    route_id = fields.Many2one(
-        'salesman.route', string='المسار', required=True,
-        help='اختر المسار أو المنطقة لهذا اليوم')
-    active = fields.Boolean(
-        string='مفعّل', default=True,
-        help='إذا كانت هذه الزيارة ضمن الخطة')
+
+
+هذا الكود خاطئ الفكرة من خط السير تخصيص ايام الأسبوع للمسار او لمنطقة لمندوب معين
