@@ -16,8 +16,4 @@ class DailyRouteLine(models.Model):
         required=True
     )
     sequence = fields.Integer(string='الترتيب')
-    visited = fields.Boolean(string='تمت الزيارة', default=False)"
-
-
-
-هذا الكود خاطئ الفكرة من خط السير تخصيص ايام الأسبوع للمسار او لمنطقة لمندوب معين
+    visited = fields.Boolean(string='تمت الزيارة', default=False)
