@@ -77,24 +77,26 @@
   </group>
 </page>
 
-
-        <page string="صلاحيات التقارير">
+<page string="صلاحيات التقارير">
   <group>
+    <!-- العمود الأول: صلاحيتان + مدة لكلٍّ منهما -->
     <group class="o_col_4">
-      <field name="report_allow_statement" string="منع كشف الصندوق"/>
-      <field name="duration_1" string="المدة المسموحة"/>
-      <field name="report_allow_aging" string="منع الأعمار"/>
-      <field name="duration_2" string="المدة المسموحة"/>
+      <field name="report_allow_statement" string="منع استعراض كشف صندوق المندوب"/>
+      <field name="duration_1"             string="المدة المسموحة"/>
+      <field name="report_allow_aging"     string="منع استعراض أعمار الذمم"/>
+      <field name="duration_2"             string="المدة المسموحة"/>
     </group>
+    <!-- العمود الثاني: صلاحية + مدة، ثم صلاحية واحدة بدون مدة -->
     <group class="o_col_4">
-      <field name="report_allow_invoices" string="منع الفواتير"/>
-      <field name="duration_3" string="المدة المسموحة"/>
-      <field name="report_allow_visits" string="منع الزيارات"/>
-      <field name="report_allow_offers" string="منع عروض الأسعار"/>
+      <field name="report_allow_invoices"  string="منع استعراض فواتير المندوب"/>
+      <field name="duration_3"             string="المدة المسموحة"/>
+      <field name="report_allow_visits"    string="منع استعراض زيارات المندوب"/>
     </group>
+    <!-- العمود الثالث: بقية الصلاحيات -->
     <group class="o_col_4">
-      <field name="report_allow_account" string="منع كشف الحساب"/>
-      <field name="report_allow_debts" string="منع المديونية"/>
+      <field name="report_allow_offers"    string="منع استعراض تقرير العروض"/>
+      <field name="report_allow_account"   string="منع استعراض كشف الحساب"/>
+      <field name="report_allow_debts"     string="منع استعراض مديونية المندوب"/>
     </group>
   </group>
 </page>
