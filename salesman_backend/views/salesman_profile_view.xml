@@ -1,89 +1,102 @@
-<odoo>
-    <record id="view_salesman_profile_form" model="ir.ui.view">
-        <field name="name">salesman.profile.form</field>
-        <field name="model">salesman.profile</field>
-        <field name="arch" type="xml">
-            <form string="بطاقة المندوب">
-                <sheet>
-                    <notebook>
+<form string="بطاقة المندوب">
+    <sheet>
+        <notebook>
 
-                        <!-- ✅ البيانات الأساسية -->
-                        <page string="البيانات الأساسية">
-                            <group>
-                                <field name="name"/>
-                                <field name="mobile"/>
-                                <field name="warehouse_id"/>
-                            </group>
-                        </page>
+            <!-- ✅ البيانات الأساسية -->
+            <page string="البيانات الأساسية">
+                <group>
+                    <field name="name"/>
+                    <field name="mobile"/>
+                    <field name="warehouse_id"/>
+                    <field name="customer_ids"/>
+                    <field name="payment_ids"/>
+                </group>
+            </page>
 
-                        <!-- ✅ صلاحيات متفرقة -->
-                        <page string="صلاحيات متفرقة">
-                            <group string="إعدادات عامة" col="3">
-                                <field name="allow_add_new_customer"/>
-                                <field name="allow_update_customer_data"/>
-                                <field name="allow_zone_update"/>
-                                <field name="visit_notes_required"/>
-                                <field name="check_exit_time"/>
-                                <field name="enforce_visit_closure_location"/>
-                                <field name="photo_required_for_new_customer"/>
-                                <field name="allow_off_route_visits"/>
-                                <field name="restrict_clients_to_route"/>
-                                <field name="enforce_visit_time"/>
-                                <field name="force_visit_location"/>
-                                <field name="enforce_route_commitment"/>
-                            </group>
-                        </page>
+            <!-- ✅ صلاحيات متفرقة -->
+            <page string="صلاحيات متفرقة">
+                <group col="3">
+                    <!-- الإعدادات العامة -->
+                    <field name="allow_add_new_customer"/>
+                    <field name="allow_update_customer_data"/>
+                    <field name="allow_zone_update"/>
+                    <field name="visit_notes_required"/>
+                    <field name="check_exit_time"/>
+                    <field name="enforce_visit_closure_location"/>
+                    <field name="photo_required_for_new_customer"/>
+                    <field name="allow_off_route_visits"/>
+                    <field name="restrict_clients_to_route"/>
+                    <field name="enforce_visit_time"/>
+                    <field name="force_visit_location"/>
+                    <field name="enforce_route_commitment"/>
+                    <field name="check_exit_from_route"/>
 
-                        <!-- ✅ صلاحيات التقارير -->
-                        <page string="صلاحيات التقارير">
-                            <group col="2">
-                                <group>
-                                    <field name="report_allow_statement"/>
-                                    <field name="report_allow_aging"/>
-                                    <field name="report_allow_invoices"/>
-                                    <field name="report_allow_visits"/>
-                                </group>
-                                <group>
-                                    <field name="report_allow_offers"/>
-                                    <field name="report_allow_account"/>
-                                    <field name="report_allow_debts"/>
-                                </group>
-                            </group>
-                            <group col="3">
-                                <field name="duration_1"/>
-                                <field name="duration_2"/>
-                                <field name="duration_3"/>
-                            </group>
-                        </page>
+                    <!-- إضافة حقول الفواتير/الخصومات هنا -->
+                    <field name="verify_debt_ceiling"/>
+                    <field name="verify_credit_days"/>
+                    <field name="allow_return_invoice"/>
+                    <field name="return_invoice_limit"/>
+                    <field name="debt_ceiling_per_salesman"/>
+                    <field name="allow_misc_discounts"/>
+                    <field name="allow_discount_by_percentage"/>
+                    <field name="apply_discount_on_receipt"/>
+                    <field name="allow_discount_on_items"/>
+                    <field name="allow_edit_prices"/>
+                    <field name="allow_edit_invoice"/>
+                    <field name="bind_prices_to_category"/>
+                    <field name="show_materials_without_stock"/>
+                    <field name="hide_stock_in_invoice"/>
+                    <field name="allow_liquid_sales"/>
+                    <field name="allow_invoice_sales"/>
+                </group>
+            </page>
 
-                        <!-- ✅ حقول الصفحة اليومية -->
-                        <page string="حقول الصفحة اليومية">
-                            <group col="2">
-                                <group>
-                                    <field name="daily_block_sales_total"/>
-                                    <field name="daily_block_orders_total"/>
-                                    <field name="daily_block_returns_total"/>
-                                    <field name="daily_block_requests_total"/>
-                                    <field name="daily_block_previous_balance"/>
-                                    <field name="daily_block_expenses"/>
-                                    <field name="daily_block_payments"/>
-                                </group>
-                                <group>
-                                    <field name="daily_block_current_balance"/>
-                                    <field name="daily_block_daily_visits"/>
-                                    <field name="daily_block_pending_visits"/>
-                                    <field name="daily_block_skipped_visits"/>
-                                    <field name="daily_block_promotional_sales"/>
-                                    <field name="daily_block_total_sales"/>
-                                    <field name="daily_block_return_invoices"/>
-                                    <field name="daily_block_approved_return_invoices"/>
-                                </group>
-                            </group>
-                        </page>
+            <page string="صلاحيات التقارير">
+                <!-- أولاً: ثلاثة أزواج (checkbox + duration) مصفوفة أفقياً -->
+                <group col="6">
+                    <field name="report_allow_statement" string="منع كشف الصندوق"/>
+                    <field name="duration_1" attrs="{'invisible': [('report_allow_statement','=',False)]}" string="المدة المسموحة"/>
+                    <field name="report_allow_aging"    string="منع الأعمار"/>
+                    <field name="duration_2" attrs="{'invisible': [('report_allow_aging','=',False)]}"    string="المدة المسموحة"/>
+                    <field name="report_allow_invoices" string="منع الفواتير"/>
+                    <field name="duration_3" attrs="{'invisible': [('report_allow_invoices','=',False)]}" string="المدة المسموحة"/>
+                </group>
+            
+                <!-- ثانياً: بقية الـ checkboxes في صف آخر -->
+                <group col="4">
+                    <field name="report_allow_visits" string="منع الزيارات"/>
+                    <field name="report_allow_offers" string="منع عروض الأسعار"/>
+                    <field name="report_allow_account" string="منع كشف الحساب"/>
+                    <field name="report_allow_debts" string="منع المديونية"/>
+                </group>
+            </page>
+                    
 
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record>
-</odoo>
+            <!-- ✅ حقول الصفحة اليومية -->
+            <page string="حقول الصفحة اليومية">
+                <group col="2">
+                    <group>
+                        <field name="daily_block_sales_total"/>
+                        <field name="daily_block_orders_total"/>
+                        <field name="daily_block_returns_total"/>
+                        <field name="daily_block_requests_total"/>
+                        <field name="daily_block_previous_balance"/>
+                        <field name="daily_block_expenses"/>
+                        <field name="daily_block_payments"/>
+                    </group>
+                    <group>
+                        <field name="daily_block_current_balance"/>
+                        <field name="daily_block_daily_visits"/>
+                        <field name="daily_block_pending_visits"/>
+                        <field name="daily_block_skipped_visits"/>
+                        <field name="daily_block_promotional_sales"/>
+                        <field name="daily_block_total_sales"/>
+                        <field name="daily_block_return_invoices"/>
+                        <field name="daily_block_approved_return_invoices"/>
+                    </group>
+                </group>
+            </page>
+
+        </notebook>
+    </sheet>
+</form>
